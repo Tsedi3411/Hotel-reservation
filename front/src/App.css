@@ -1,38 +1,245 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.header .log {
+  width: 120px;
+}
+.header .nav {
+  display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.header a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  /* text-transform: uppercase; */
+}
+.header a img {
+  width: 25px;
+}
+.header a:hover {
+  color: chocolate;
+  text-decoration: underline;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url(./Assets/skylight-hotel.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
   color: white;
 }
+.home h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  position: relative;
+  animation: heading;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes heading {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+.home p {
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  opacity: 0;
+  animation-name: p;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes p {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.home a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: black;
+  margin-top: 20px;
 
-.App-link {
-  color: #61dafb;
+  display: inline-block;
+  border: 1px #fff solid;
+  opacity: 0;
+  animation-name: btn;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+
+  transition-property: transform;
+  transition-duration: 1s;
+}
+.home a:hover {
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: bold;
+  transform: rotateY(180deg);
+}
+@keyframes btn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.branch {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex: 1;
+}
+.hotel {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex: 1;
+}
+.reservation {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex: 1;
+}
+ {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex: 1;
+}
+.setting {
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex: 1;
+}
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1;
+}
+.user .sky {
+  width: 300px;
+}
+.user form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user .fname {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.user input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+.user .lname {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.user .email {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.user .password {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.user .roll {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.user select {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+.user input[type="reset"] {
+  width: 100%;
+ background-color: red;
+color: white;
+  border-radius: 5px;
+}
+.user input[type="submit"] {
+  color: white;
+  font-size: 16px;
+  background-color: green;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+.footer .first {
+  display: flex;
+  background-color: #333;
+  color: white;
+  justify-content: center;
+}
+.footer .second {
+  display: flex;
+  background-color: #000;
+  color: white;
+  gap: 6px;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.room {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+
+.room > div {
+  padding: 10px;
 }

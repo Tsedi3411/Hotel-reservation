@@ -10,11 +10,14 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Room = require('./models/Room')
 const Reservation = require('./models/Reservation')
+const cors=require('cors')
 
 relations()
 database.sync()
 app.use(express.json())
 app.use(express.urlencoded())
+app.use(cors('localhost:300'))
+//for localhost 3000 only if empyty for every port
 
 //accepting users
 app.post('/register', async (req, res) => {
