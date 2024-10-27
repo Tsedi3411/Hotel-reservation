@@ -95,6 +95,20 @@ app.get('/all-reserves', async(req, res)=>{
 })
 
 
+app.get('/my-reserves', async(req, res)=>{
+    let token = req.headers['authorization'].split(' ')[1]
+    //if token id not found give false responce
+    if (!token) return ({ success: false })
+        //decrypt back the userId from the token
+    let userId = jwt.verify(token, 'secret4321')
+    let user=await User.findByPk(userId)
+    let rooms=await user.getRooms()
+    
+    res.json(rooms)
+})
+    
+
+
 
 
 
